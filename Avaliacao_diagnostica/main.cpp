@@ -1,47 +1,61 @@
 #include <iostream>
+#include <string>
+#include <fstream>
+#include <cstdlib>     /* strtof */
 
-using std::cin;
-using std::cout;
-using std::endl;
+using namespace std;
+
+struct Aluno{
+	string numero;
 	
-int main(int argc, char* argv[]){
-	string linha;
+
+};
+
+int main(){
+	string nomeCompleto;
 	string temp;
 	int i;
-	if(argc < 4)
-	cout << "Entrda invalida!" << endl;
-	ifstream arq("entrada.in");
-
+	int numEstudante = 0;
+	ifstream arq("entrada.txt");
+	Aluno estudante[40];
 	if(arq.is_open()){
 		while(getline(arq, nomeCompleto)){
 			temp = "";
-			for(i = 0; i < (int)linha.size(); i++){
-				if(linha[i] != ','){
-					temp = temp + linha[i];
+			for(i = 0; i < (int)nomeCompleto.size(); i++){
+				if(nomeCompleto[i] != ','){
+					temp = temp + nomeCompleto[i];
 				}else{
-					break;
+					estudante[numEstudante].numero = temp; 
+					numEstudante++;
+					temp ="";
+					//break;
 				}
 			}
-				estudante[numEstudante].nome = temp;
-				temp = "";
-				for(i = i + 1; i < (int)linha.size(); i++){
-					if(linha[i] == ';'){
-					
-					}else{
-						temp = temp + linha[i];
-					}
-					
-				}
-				//estudante[numEstudante].nota = temp;
-				//numEstudante++;
+	
 		}
 	}else{
 		cout << "Arquivo invalido!" << endl;				
 	}
-arq.close();
+	arq.close();
 
-
-
-
+	cout << "Lendo Registros... " << endl;
+	for(i = 0; i < 40; i++){
+		cout << "Lendo numero " << i + 1 <<" = "<< estudante[i].numero << endl;
+		
+	}
+	cout << "Convertendo..." << endl;
+	/*Array para armazenar numeros*/
+	float array[40];
+	
+	for(i = 0; i < 40; i++){
+		array[i] = strtof((estudante[i].numero).c_str(),0);	
+	}
+	float media;
+	for(i = 0; i < 40; i++){
+		cout << "Numero " << i + 1 << " = " << array[i] << endl;
+		media = media + array[i];
+	}
+	media = media / 40;
+	cout << "Media das notas dos alunos: " << media << endl;
 	return 0;
 }
