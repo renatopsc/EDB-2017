@@ -31,7 +31,16 @@ int main(){
 					//break;
 				}
 			}
-	
+				for(i = i + 1; i < (int)nomeCompleto.size(); i++){
+					if(nomeCompleto[i] == '\n'){
+					
+					}else{
+						temp = temp + nomeCompleto[i];
+					}
+					
+				}
+				estudante[numEstudante].numero = temp;
+				numEstudante++;
 		}
 	}else{
 		cout << "Arquivo invalido!" << endl;				
@@ -48,7 +57,8 @@ int main(){
 	float array[40];
 	
 	for(i = 0; i < 40; i++){
-		array[i] = strtof((estudante[i].numero).c_str(),0);	
+		array[i] = strtof((estudante[i].numero).c_str(),0);
+		
 	}
 	float media;
 	for(i = 0; i < 40; i++){
