@@ -13,12 +13,12 @@ struct Aluno{
 /** @brief Funcao principal */
 int main(int argc, char const *argv[])
 {
-					string nomeCompleto;
-					string temp;
-					int i, j;
-					int numEstudante = 0;
-					ifstream arq("entrada.in");
-					Aluno estudante[40];	
+	string nomeCompleto;
+	string temp;
+	int i, j;
+	int numEstudante = 0;
+	ifstream arq("entrada.in");
+	Aluno estudante[40];	
 
 				
 
@@ -55,16 +55,10 @@ int main(int argc, char const *argv[])
 		cout <<"Arquivo saida.txt nao pode ser aberto" << endl;
 		abort();
 	}
-/*
-	cout <<"Entre com o numero e o nome do funcionario\n" << "Fim do arquivo CTRL_Z termina a entrada de dados\n\n";
-	while(cin >> numero >> nome){
-		outFile << numero << " " << nome << '\n';
-		cout <<"? ";
-	}
-*/
 
+		//armazena dados em outFile
 		for(i = 0; i < 5; i++){
-//			cout << "Lendo numero " << i + 1 <<" = "<< estudante[i].numero << endl;
+			
 			outFile << estudante[i].numero << " " << '\n';
 		}
 	outFile.close();
