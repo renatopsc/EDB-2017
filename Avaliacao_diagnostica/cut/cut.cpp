@@ -30,67 +30,10 @@ int main(int argc, char const *argv[])
 				//targ = argv[j];
 					//cout <<"Targ: "<< targ << endl;
 					cout <<"Argv: "<< *argv[j] << endl;
+					///ler arquivo
 
-
-										
-										if(arq.is_open()){
-											while(getline(arq, nomeCompleto)){
-												temp = "";
-												for(i = 0; i < (int)nomeCompleto.size(); i++){
-													if(nomeCompleto[i] != *argv[i]){
-														temp = temp + nomeCompleto[i];
-													}else{
-														break;
-													}
-												}
-													estudante[numEstudante].numero = temp;
-													temp = "";
-													for(i = i + 1; i < (int)nomeCompleto.size(); i++){
-														if(nomeCompleto[i] == '\n'){
-					
-														}else{
-															temp = temp + nomeCompleto[i];
-														}
-					
-													}
-													estudante[numEstudante].numero = temp;
-													numEstudante++;
-											}
-										}else{
-											cout << "Arquivo invalido!" << endl;				
-										}
-										arq.close();
-
-	cout << "Lendo Registros... " << endl;
-	for(i = 0; i < 40; i++){
-		cout << "Lendo nome: " << estudante[i].numero << endl;
-		//cout << "Lendo nota: " << estudante[i].nota << endl;
-	}
-	cout << "Convertendo..." << endl;
-	/*Array para armazenar notas e calcular media*/
-	float array[2];
-	/* Convertendo para float */
-	//float aNumero=strtof((estudante[0].nota).c_str(),0); // string to float
-	//float bNumero=strtof((estudante[1].nota).c_str(),0);
-	//cout << "A = " << aNumero << " e B = " << bNumero << endl;
-
-	for(i = 0; i < 2; i++){
-		array[i] = strtof((estudante[i].numero).c_str(),0);
-	}
-	float media;
-	for(i = 0; i < 2; i++){
-		cout << "nota " << i + 1 << " = " << array[i] << endl;
-		media = media + array[i];
-	}
-					
-					}
-		
 			}
-			
-
-
-
-	
+	}
 	
 	
 
