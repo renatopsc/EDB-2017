@@ -8,7 +8,7 @@ TESTDIR = test
 
 #Variavel para o compilador g++
 CC = g++
-#Variavel para flags de compilacao
+#Variavel para flags de compilacao e onde -I considera os arquivos de cabeçalho especificado no diretorio include
 CFLAGS = -O3 -Wall -ansi -pedantic -I $(INCLUDEDIR)
 #Variavel para diretivas do ligador, busca bibliotecas em diretorio especificado(sem uso para o exemplo)
 LDFLAGS =
