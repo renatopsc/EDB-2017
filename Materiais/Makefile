@@ -26,12 +26,12 @@ APPOBJ = $(patsubst $(APPDIR)/%.cpp,$(OBJDIR)/%.o,$(APP))
 
 #Pega a lista dos arquivos no diretorio test
 _TESTS = $(wildcard $(TESTDIR)/*.cpp)
-#Pega 
+#Gera os arquivos objetos  de test
 TESTS = $(patsubst %.cpp,%,$(_TESTS))
-
+#Alvo padrão, seus pre requisitos e comandos
 $(BIN): $(OBJS) $(APPOBJ)
 	$(CC) -o $(BIN) $(APPOBJ) $(OBJS) $(CFLAGS) $(LDFLAGS)
-
+#Regras de compilacao
 $(APPOBJ): $(APP)
 	$(CC) -c -o $@ $< $(CFLAGS)
     
@@ -44,7 +44,7 @@ test: $(TESTS)
 $(TESTDIR)/t_%: $(TESTDIR)/t_%.cpp $(OBJS)
 	$(CC) -o $@ $< $(OBJS) $(CFLAGS) $(LDFLAGS)
 	$@
-
+#Alvo para limpeza de arquivos gerados pela compilacao
 clean:
 	rm -f $(BIN) $(OBJS) $(APPOBJ)
 	rm -f $(TESTS)
