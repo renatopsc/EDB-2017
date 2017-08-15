@@ -8,3 +8,4 @@ Conteúdos abordados durante a disciplina
 
 Horário de monitoria
 34T56 A202 Monitor Gustavo
+[complexidade assintótica](https://pt.stackoverflow.com/questions/33319/o-que-%C3%A9-a-complexidade-de-um-algoritmo)
